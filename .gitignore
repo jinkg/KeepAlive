@@ -7,3 +7,11 @@
 /build
 /captures
 .externalNativeBuild
+/watchdog_localserversocket/src/main/assets/x86
+/watchdog_localserversocket/src/main/assets/x86_64
+/watchdog_localserversocket/src/main/assets/armeabi
+/watchdog_localserversocket/src/main/assets/armeabi-v7a
+/watchdog_filelock/src/main/assets/armeabi
+/watchdog_filelock/src/main/assets/armeabi-v7a
+/watchdog_filelock/src/main/assets/x86
+/watchdog_filelock/src/main/assets/x86_64
