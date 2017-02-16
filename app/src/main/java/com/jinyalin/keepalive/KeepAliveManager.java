@@ -85,5 +85,13 @@ public class KeepAliveManager {
             context.getApplicationContext().unregisterReceiver(sReceiver);
         } catch (Exception ignore) {
         }
+        stopWatchdogService(context);
+    }
+    private static void stopWatchdogService(Context context){
+        Intent intent = new Intent(GuardService.WATCHDOG_STOP_ACTION);
+        ComponentName componentName = new ComponentName(context.getPackageName(),
+            GuardService.class.getName());
+        intent.setComponent(componentName);
+        context.startService(intent);
     }
 }

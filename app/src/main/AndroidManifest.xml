@@ -37,6 +37,9 @@
             <intent-filter>
                 <action android:name="com.yalin.ACTION.WATCHDOG" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="com.yalin.ACTION.STOP_WATCHDOG" />
+            </intent-filter>
         </service>
 
     </application>
