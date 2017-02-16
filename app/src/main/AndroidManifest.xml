@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jinyalin.keepalive.keepalivedemo">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--  android:launchMode="singleInstance"
+                防止开启屏幕后，自己finish掉，却把下面的Activity调起来了-->
+        <activity
+            android:name="com.jinyalin.keepalive.onepixel.OnePixelActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/OnePixelActivityTheme" />
+
+        <service android:name="com.jinyalin.keepalive.normal.NormalService" />
+        <service android:name="com.jinyalin.keepalive.foreground.ForegroundService" />
+        <service android:name="com.jinyalin.keepalive.foreground.ForegroundService$InnerService" />
+        <service
+            android:name="com.jinyalin.keepalive.guard.GuardService"
+            android:exported="false"
+            android:process=":watchdog_service">
+            <intent-filter>
+                <action android:name="com.yalin.ACTION.WATCHDOG" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
