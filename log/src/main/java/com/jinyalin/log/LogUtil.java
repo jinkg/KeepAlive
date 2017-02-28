@@ -57,7 +57,7 @@ public class LogUtil {
 
         Log.d(tag, procInfo + msg);
 
-        writeLog(tag, procInfo + msg);
+//        writeLog(tag, procInfo + msg);
     }
 
     private static String getProcessInfo() {
@@ -88,13 +88,14 @@ public class LogUtil {
 
             bw.close();
         } catch (Exception e) {
+            e.printStackTrace();
             // ignore
         }
     }
 
     private static String getCurrentTime() {
         Calendar c = Calendar.getInstance();
-        return String.format(Locale.getDefault(), "%D-%02d-%02d %02d:%02d:%02d.%03d",
+        return String.format(Locale.getDefault(), "%d-%02d-%02d %02d:%02d:%02d.%03d",
                 c.get(Calendar.YEAR), c.get(Calendar.MONTH) + 1, c.get(Calendar.DAY_OF_MONTH),
                 c.get(Calendar.HOUR_OF_DAY), c.get(Calendar.MINUTE), c.get(Calendar.SECOND),
                 c.get(Calendar.MILLISECOND));
