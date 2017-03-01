@@ -7,7 +7,6 @@ import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.jinyalin.keepalive.KeepAliveManager;
 import com.jinyalin.keepalive.Stoppable;
 
 /**
@@ -32,13 +31,14 @@ public class OnePixelActivity extends Activity implements Stoppable {
         params.height = 1;
         window.setAttributes(params);
 
-        KeepAliveManager.setOnePixelActivity(this);
+        ScreenBroadcastReceiver.setOnePixelActivity(this);
     }
 
     @Override
     public void stop() {
         Log.d(TAG, "stop: ");
         finish();
-        KeepAliveManager.setOnePixelActivity(null);
+
+        ScreenBroadcastReceiver.setOnePixelActivity(null);
     }
 }

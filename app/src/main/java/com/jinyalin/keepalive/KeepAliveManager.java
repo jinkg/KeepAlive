@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import com.jinyalin.keepalive.foreground.ForegroundService;
 import com.jinyalin.keepalive.guard.GuardService;
 import com.jinyalin.keepalive.normal.NormalService;
-import com.jinyalin.keepalive.onepixel.OnePixelActivity;
 import com.jinyalin.keepalive.onepixel.ScreenBroadcastReceiver;
 
 import java.util.HashSet;
@@ -24,8 +23,6 @@ public class KeepAliveManager {
     private static final Set<Stoppable> sStoppableSet = new HashSet<>();
 
     private static final ScreenBroadcastReceiver sReceiver = new ScreenBroadcastReceiver();
-
-    private static Stoppable sOnePixelActivity;
 
     public static void registerStoppable(Stoppable stoppable) {
         sStoppableSet.add(stoppable);
@@ -56,23 +53,6 @@ public class KeepAliveManager {
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF);
         intentFilter.addAction(Intent.ACTION_SCREEN_ON);
         context.getApplicationContext().registerReceiver(sReceiver, intentFilter);
-    }
-
-    public static void setOnePixelActivity(Stoppable onePixelActivity) {
-        sOnePixelActivity = onePixelActivity;
-    }
-
-    public static void startOnePixelActivity(Context context) {
-        Intent activityIntent = new Intent(context, OnePixelActivity.class);
-        activityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.getApplicationContext().startActivity(activityIntent);
-    }
-
-    public static void finishOnePixelActivity(Context context) {
-        if (sOnePixelActivity != null) {
-            sOnePixelActivity.stop();
-            sOnePixelActivity = null;
-        }
     }
 
     public static void stopAllAliveService(Context context) {
