@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="OnePixelActivityTheme" parent="AppTheme">
+    <style name="KeepAlive_OnePixelActivityTheme" parent="AppTheme">
 
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsTranslucent">true</item>

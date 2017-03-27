@@ -9,7 +9,7 @@ import android.content.Context;
  */
 
 public class WatchdogApi {
-    public static void startWatchdog(Context context, Class serviceClazz) {
+    public static void startWatchdog(Context context, Class serviceClazz, String action) {
 
     }
 

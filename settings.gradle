@@ -1,1 +1,1 @@
-include ':app', ':watchdog_filelock', ':watchdog_localserversocket', ':log'
+include ':app', ':watchdog_filelock', ':watchdog_localserversocket', ':log', ':appwrapper'

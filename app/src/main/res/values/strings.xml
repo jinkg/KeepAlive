@@ -1,3 +1,3 @@
 <resources>
-    <string name="app_name">KeepAliveDemo</string>
+    <string name="keep_alive_app_name">KeepAliveDemo</string>
 </resources>

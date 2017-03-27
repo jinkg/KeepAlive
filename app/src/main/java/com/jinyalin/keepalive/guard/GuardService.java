@@ -13,9 +13,7 @@ import android.support.annotation.Nullable;
 
 import android.text.TextUtils;
 
-import com.jinyalin.keepalive.KeepAliveManager;
 import com.jinyalin.keepalive.Stoppable;
-import com.jinyalin.log.LogUtil;
 import com.yalin.watchdog.WatchdogApi;
 
 /**

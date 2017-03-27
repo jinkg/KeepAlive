@@ -1,11 +1,11 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply from: '../local_maven.gradle'
 
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "com.jinyalin.keepalive.keepalivedemo"
-        minSdkVersion 15
+        minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -17,12 +17,13 @@ android {
         }
     }
 
-    productFlavors{
-        watchdogFileLock{
+    publishNonDefault true
+    productFlavors {
+        watchdogFileLock {
 
         }
 
-        watchdogLocalServerSocket{
+        watchdogLocalServerSocket {
 
         }
     }
@@ -30,7 +31,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.3.0'
 
     watchdogFileLockCompile project(":watchdog_filelock")
 
